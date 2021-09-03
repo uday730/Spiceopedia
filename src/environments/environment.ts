@@ -2,8 +2,24 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+//http://spiceopediaapi.azurewebsites.net/
+//http://spiceopedia-identity.azurewebsites.net/
+//https://spiceopedia.azurewebsites.net
+
+//'https://localhost:5003/
+//https://localhost:5001/api/"
+//http://localhost:4201
+
 export const environment = {
-  production: false
+  production: false,
+  IDENTITY_SERVER: 'https://spiceopedia-identity.azurewebsites.net/',
+  CLIENT_ID: 'spicyui',
+  REDIRECT_URI: 'https://spiceopedia.azurewebsites.net/auth-callback',
+  POSTLOGOUT_URI: 'https://spiceopedia.azurewebsites.net/logout',
+  RESPONSE_TYPE:"code",
+  SCOPE:"openid profile email role api1.read",
+
+  WEBAPI_URI:"https://spiceopediaapi.azurewebsites.net/api/"
 };
 
 /*

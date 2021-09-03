@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Spiceopedia": {
+    "spiceopedia": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -38,35 +38,34 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Spiceopedia",
+          
+            "outputPath": "dist/spiceopedia",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/web.config"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              "src/assets/vendors/js/vendor.bundle.base.js",
-              "src/assets/vendors/js/vendor.bundle.addons.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "4mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ],
               "fileReplacements": [
@@ -92,10 +91,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Spiceopedia:build:production"
+              "browserTarget": "spiceopedia:build:production"
             },
             "development": {
-              "browserTarget": "Spiceopedia:build:development"
+              "browserTarget": "spiceopedia:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,7 +102,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Spiceopedia:build"
+            "browserTarget": "spiceopedia:build"
           }
         },
         "test": {
@@ -126,5 +125,5 @@
       }
     }
   },
-  "defaultProject": "Spiceopedia"
+  "defaultProject": "spiceopedia"
 }

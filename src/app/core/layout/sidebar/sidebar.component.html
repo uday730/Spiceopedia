@@ -1,0 +1,51 @@
+
+
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+      <li class="nav-item nav-profile">
+        <div class="nav-link">
+          <div class="profile-image">
+            <img src="http://via.placeholder.com/40x40" alt="image">
+          </div>
+          <div class="profile-name">
+            <p class="name">
+              Welcome {{userName}}
+            </p>
+            <p class="designation">
+              {{role}}
+            </p>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/dashboard']">
+          <i class="fa fa-home menu-icon"></i>
+          <span class="menu-title">Dashboard</span>
+        </a>
+        <!-- <a  [routerLink]="['/dashboard']">Dashboard</a> -->
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/taxonomy']">
+          <i class="fa fa-puzzle-piece menu-icon"></i>
+          <span class="menu-title">Taxonomy</span>
+        </a>
+        <!-- |<a  >Taxonomy </a>  -->
+        <!-- |<a [routerLink]="['/']">authcallback</a> -->
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" [routerLink]="['/authcallback']">
+          <i class="fa fa-puzzle-piece menu-icon"></i>
+          <span class="menu-title">Authcallback</span>
+        </a>
+        <!-- |<a  >Taxonomy </a>  -->
+        <!-- |<a [routerLink]="['/authcallback']">authcallback</a> -->
+      </li>
+           
+      <li class="nav-item">
+        <a class="nav-link" href="pages/documentation.html">
+          <i class="far fa-file-alt menu-icon"></i>
+          <span class="menu-title">Documentation</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
