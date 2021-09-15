@@ -10,7 +10,6 @@ export class AuthCallbackComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,private router:Router,
     private authService: AuthService) { 
-    console.log('auth callback triggered')
   }
 
   ngOnInit(): void {
@@ -18,8 +17,6 @@ export class AuthCallbackComponent implements OnInit {
     this.authService.completeAuthentication()
      .then(user=>{
        let userObj = <User>user!;
-          console.log(user)
-         // this.callParent.emit(userObj.profile.given_name);
          this.router.navigate(['/dashboard'],    {queryParams: {}});
      });
   }

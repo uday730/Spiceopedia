@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserManager, UserManagerSettings, User, Log } from 'oidc-client';
 import {environment} from '../../../environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -40,13 +41,13 @@ export class AuthService {
   completeAuthentication(): Promise<void> {
     return this.manager.signinRedirectCallback().then(user => {
       this.user = user;
-      console.log(this.user)
+    //  console.log(this.user)
     });
   }
 
 }
 
-export function getClientSettings(): UserManagerSettings {
+export function getClientSettings( ): UserManagerSettings {
   return {
       authority: environment.IDENTITY_SERVER,
       client_id: environment.CLIENT_ID,

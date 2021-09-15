@@ -4,6 +4,7 @@ import { AuthGuardService } from '../service/auth-guard.service';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import {PlainLayoutComponent} from './plain-layout/plain-layout.component';
 
+
 const routes: Routes = [
   {
     path: '',

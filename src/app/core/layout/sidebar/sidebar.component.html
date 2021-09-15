@@ -5,7 +5,7 @@
       <li class="nav-item nav-profile">
         <div class="nav-link">
           <div class="profile-image">
-            <img src="http://via.placeholder.com/40x40" alt="image">
+            <img src="../assets/images/m_avatar.jpg" alt="image">
           </div>
           <div class="profile-name">
             <p class="name">
@@ -22,30 +22,132 @@
           <i class="fa fa-home menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
-        <!-- <a  [routerLink]="['/dashboard']">Dashboard</a> -->
       </li>
       <li class="nav-item" >
-        <a class="nav-link" [routerLink]="['/taxonomy']">
+        <a class="nav-link" [routerLink]="['/spiceobject']">
           <i class="fa fa-puzzle-piece menu-icon"></i>
-          <span class="menu-title">Taxonomy</span>
+          <span class="menu-title">Spice Object</span>
         </a>
-        <!-- |<a  >Taxonomy </a>  -->
-        <!-- |<a [routerLink]="['/']">authcallback</a> -->
       </li>
       <li class="nav-item" >
-        <a class="nav-link" [routerLink]="['/authcallback']">
+        <a class="nav-link" [routerLink]="['/tastegenerator']">
           <i class="fa fa-puzzle-piece menu-icon"></i>
-          <span class="menu-title">Authcallback</span>
+          <span class="menu-title">Taste Generator</span>
         </a>
-        <!-- |<a  >Taxonomy </a>  -->
-        <!-- |<a [routerLink]="['/authcallback']">authcallback</a> -->
       </li>
-           
+
       <li class="nav-item">
-        <a class="nav-link" href="pages/documentation.html">
-          <i class="far fa-file-alt menu-icon"></i>
-          <span class="menu-title">Documentation</span>
+        <a class="nav-link" data-toggle="collapse" href="#Flavour"  aria-expanded="false" aria-controls="Flavour">
+          <i class="fab fa-trello menu-icon"></i>
+          <span class="menu-title">Flavors </span>
+          <i class="menu-arrow"></i>
         </a>
+        <div class="collapse" id="Flavour">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/flavorobject']">Flavor Objects</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/flavorvalidators']">Flavor Validators</a></li>
+          </ul>
+        </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#Crop" aria-expanded="false" aria-controls="Crop">
+          <i class="fab fa-trello menu-icon"></i>
+          <span class="menu-title">Crop </span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="Crop">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/crop']">Crop</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/cropsubtype']">Crop Subtype</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#Harvest" aria-expanded="false" aria-controls="Harvest">
+          <i class="fab fa-trello menu-icon"></i>
+          <span class="menu-title">Harvest </span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="Harvest">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/harvest']">Harvest</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/harvestsubtype']">Harvest Subtype</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#kitchen" aria-expanded="false" aria-controls="kitchen">
+          <i class="fab fa-trello menu-icon"></i>
+          <span class="menu-title">Kitchen </span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="Harvest">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/kitchen']">Kitchen</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/kitchensubtype']">Kitchen Subtype</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#taste" aria-expanded="false" aria-controls="taste">
+          <i class="fab fa-trello menu-icon"></i>
+          <span class="menu-title">Taste Menu</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="taste">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/taste']">Taste Object</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/tastesubtype']">Taste Subtype</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/tastecacao']">Taste Cacao Nutty</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#taxonomy" aria-expanded="false" aria-controls="taxonomy">
+          <i class="fab fa-trello menu-icon"></i>
+          <span class="menu-title">Taxonomy</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="taxonomy">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/taxonomy']">Taxonomy</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/taxonomyspecies']">Taxonomy Species</a></li>
+          </ul>
+        </div>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#other" aria-expanded="false" aria-controls="other">
+          <i class="fab fa-trello menu-icon"></i>
+          <span class="menu-title">Other</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="other">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/attachments']">Attachments</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/area']">Area</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/category']">Category</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/certificates']">Certificates</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/claims']">Claims</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/components']">Components</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/country']">Country of Origin</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/description']">Description</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/lifecycle']">Lifecycle</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/microbiology']">Microbiology</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/providers']">Providers</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/productrange']">Product Range</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/processing']">Processing</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/status']">Status</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/trends']">Trends</a></li>
+            <li class="nav-item"> <a class="nav-link" [routerLink]="['/vitamins']">Vitamins Minerals</a></li>
+
+          </ul>
+        </div>
+      </li>
+       
     </ul>
   </nav>

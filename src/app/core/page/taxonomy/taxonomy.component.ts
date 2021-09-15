@@ -10,6 +10,8 @@ export class TaxonomyComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
 
 }

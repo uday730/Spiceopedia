@@ -159,8 +159,9 @@
 
         img {
           width: calc(#{$sidebar-width-lg} - 100px );
+          padding-top: 17px;
           max-width: 100%;
-          height: 38px;
+          height: 100px;
           margin: auto;
           vertical-align: middle;
         }
