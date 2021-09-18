@@ -1,0 +1,47 @@
+<div class="content-wrapper">
+     <div class="page-header">
+      <!-- <h3 class="page-title">
+          Form validation
+      </h3> -->
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a   [routerLink]="['/category']">Category</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Category Details</li>
+          </ol>
+      </nav>
+    </div> 
+    <div class="row grid-margin">
+      <div class="col-8">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Add Category</h4>
+            <form class="form-horizontal" [formGroup]="form">
+            <div class="form-group row">
+              <div class="col-lg-3">
+                <label class="col-form-label">Name</label>
+              </div>
+              <div class="col-lg-8">
+                <input class="form-control" maxlength="50"  required  type="text" formControlName="Name"
+                [ngClass]="{ 'is-invalid': submitted && f.Name.errors }" >
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <div class="col-lg-3">
+                <label class="col-form-label">Description</label>
+              </div>
+              <div class="col-lg-8">
+                <textarea id="maxlength-textarea" class="form-control"  required formControlName="Description"  maxlength="100" rows="3" 
+                [ngClass]="{ 'is-invalid': submitted && f.Description.errors }" ></textarea>
+              </div>
+            </div>
+          </form>
+            <!-- <input class="btn btn-primary" type="submit" value="Submit" (click)="onSubmit()"> -->
+            <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+     
+  </div>

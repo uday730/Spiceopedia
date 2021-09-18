@@ -6,7 +6,8 @@ import {SidebarComponent} from './sidebar/sidebar.component';
 import {MainLayoutComponent} from './main-layout/main-layout.component';
 import {PlainLayoutComponent} from './plain-layout/plain-layout.component';
 import { LayoutRoutingModule } from './layout-routing';
- 
+import { SpiceopediaService } from '../service/spiceopedia.service';
+import { BaseService } from '../service/base.service';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { LayoutRoutingModule } from './layout-routing';
     CommonModule,
     LayoutRoutingModule
   ],
+  providers:[SpiceopediaService,BaseService],
   exports:[
 
   ],

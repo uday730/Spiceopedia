@@ -17,7 +17,7 @@ export class AuthCallbackComponent implements OnInit {
     this.authService.completeAuthentication()
      .then(user=>{
        let userObj = <User>user!;
-         this.router.navigate(['/dashboard'],    {queryParams: {}});
+         this.router.navigate(['/category'],    {queryParams: {}});
      });
   }
 

@@ -16,6 +16,8 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       { path: 'dashboard', loadChildren: () => import(`../page/dashboard/dashboard.module`).then(m => m.DashboardModule) },
+      { path: 'category', loadChildren: () => import(`../page/category/category.module`).then(m => m.CategoryModule) },
+      { path: 'categorydetail', loadChildren: () => import(`../page/category/category.module`).then(m => m.CategoryModule) },
       { path: 'taxonomy', loadChildren: () => import(`../page/taxonomy/taxonomy.module`).then(m => m.TaxonomyModule) },
       { path: 'logout', loadChildren: () => import(`../page/logout/logout.module`).then(m => m.LogoutModule) },
     ],
