@@ -7,7 +7,10 @@ import { AbstractControl,FormGroup, FormBuilder, Validators } from '@angular/for
 //import Validation from '../utils/validation';
 import Validation from '../../../util/validation';
 import { SpiceopediaService } from '../../service/spiceopedia.service';
-import { map } from 'rxjs/operators';
+import { catchError, map } from 'rxjs/operators';
+import {CustomJSExtention} from '../../../util/custom-js-extension';
+import {Constants,ToastOption} from '../../../Constants/constants';
+import { HttpStatus } from 'src/app/helpers/http-status.enum';
 
 @Component({
   selector: 'app-category',
@@ -19,8 +22,10 @@ export class CategoryDetailComponent implements OnInit {
   category: Category = new Category();
   form: FormGroup;
   submitted = false;
+  public popupBody ="Are you sure want to save the details?"
   id:number=0;
-
+  public alertIcon:string = 'success';
+  
   constructor(private formBuilder: FormBuilder,
               private http: HttpClient, 
               private route: ActivatedRoute,
@@ -30,16 +35,10 @@ export class CategoryDetailComponent implements OnInit {
            
   ngOnInit(): void {
       this.route.params.subscribe(p => {
-        console.log(p);
+        //console.log(p);
         this.id = p.id;
       });
 
-    // let id = this.route.paramMap
-    //                         .pipe(
-    //                           map((params: ParamMap) => params.get('id'))
-    //                         );
-
-    //this.clearValidation();
     this.form = this.formBuilder.group({
                 Name: [this.category?this.category.Name:'', Validators.required],
                 Description: [this.category?this.category.Description:'', Validators.required],
@@ -56,22 +55,14 @@ export class CategoryDetailComponent implements OnInit {
     return this.form.controls;
   }
 
-  // clearValidation():void{
-  //   this.form = this.formBuilder.group({
-  //     Name: [this.category?this.category.Name:'', null],
-  //     Description: [this.category?this.category.Description:'', null],
-  //   });
-  // }
-
   onSubmit():void{
     this.submitted = true;
-
+    
     if (this.form.invalid) {
+      new CustomJSExtention().ToasterSuccess("Please enter all the mandatory fields!",ToastOption.Danger,Constants.Toast_Danger_BgColor); 
       return;
     }
-
-    console.log(JSON.stringify(this.form.value, null, 2));
-    this.saveCategory();
+    new CustomJSExtention().ModalShow('SavePopup');
   }
 
   getCategoryDetails():void{
@@ -88,23 +79,38 @@ export class CategoryDetailComponent implements OnInit {
     );
   }
 
-
+  myCallbackFunction(): void {
+    //callback code here
+    this.saveCategory();
+    }
 
   saveCategory():void{
-
     this.spiceService.saveCategory(this.form.value)
+    
     .subscribe(
         (response:any) =>{ 
-          //this.rowData = response;
-          this.form.setValue({
-            Name: response.category.name,
-            Description: response.category.description,
-            Id:response.category.id
-         });
-
-        // console.log(JSON.stringify(this.form.value, null, 2));
+            if( response.status === HttpStatus.OK)
+            {
+                this.form.setValue({
+                  Name: response.category.name,
+                  Description: response.category.description,
+                  Id:response.category.id
+                  
+              });
+                new CustomJSExtention().ModalHide('SavePopup');
+                new CustomJSExtention().ToasterSuccess("Saved successfully!",ToastOption.Success,Constants.Toast_Success_BgColor);
+            }
+            else
+            {
+              new CustomJSExtention().ModalHide('SavePopup');
+              new CustomJSExtention().ToasterSuccess(response.message,ToastOption.Danger,Constants.Toast_Danger_BgColor);  
+            }
         },
-        err => console.log("angular is trash")
+        (err:any) => {
+          var x = err;
+          new CustomJSExtention().ModalHide('SavePopup');
+          new CustomJSExtention().ToasterSuccess("Something went wrong!",ToastOption.Danger,Constants.Toast_Danger_BgColor);
+      }
     );
   }
 

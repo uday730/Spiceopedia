@@ -20,3 +20,7 @@
   height: 30px;
   font-size: small;
  }
+
+ .text-align-right{
+   text-align:right ;
+ }

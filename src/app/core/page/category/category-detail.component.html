@@ -31,17 +31,19 @@
                 <label class="col-form-label">Description</label>
               </div>
               <div class="col-lg-8">
-                <textarea id="maxlength-textarea" class="form-control"  required formControlName="Description"  maxlength="100" rows="3" 
+                <textarea id="maxlength-textarea" class="form-control"  required formControlName="Description"   rows="3" 
                 [ngClass]="{ 'is-invalid': submitted && f.Description.errors }" ></textarea>
               </div>
             </div>
+
+          <modal-popup-component [callbackFunction]="myCallbackFunction.bind(this)" [popupContent]="popupBody" [alertType]="alertIcon"></modal-popup-component>
+
           </form>
             <!-- <input class="btn btn-primary" type="submit" value="Submit" (click)="onSubmit()"> -->
-            <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+            <button class="btn btn-primary" (click)="onSubmit()" >Submit</button>
+            <!-- <button type="button" class="btn btn-danger btn-fw" (click)="ShowToaster()">Danger</button> -->
           </div>
         </div>
       </div>
     </div>
-    
-     
   </div>
