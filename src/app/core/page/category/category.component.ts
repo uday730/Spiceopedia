@@ -54,14 +54,14 @@ public columnDefs:any =[]
   ngOnInit(): void {
 
     this.columnDefs = [
-      { "field": 'Edit', width: 100, cellRenderer: 'editButtonRenderer',cellRendererParams:{
+      { "field": 'Edit', headerName: "Action", width: 100, cellRenderer: 'editButtonRenderer',cellRendererParams:{
         myfield:'id',
         editEventCallback:   this.onEditCallback,
         deleteEventCallback:this.onDeleteCallback}
       },
-      { field: 'id',sortable: true, width: 70,},
-      { field: 'name',sortable: true , width: 220},
-      { field: 'description',sortable: true,  width: 350}
+      { field: 'id',sortable: true, headerName: "Id", width: 70,},
+      { field: 'name',sortable: true ,  headerName: "Category Name",width: 220},
+      { field: 'description',sortable: true,  headerName: "Description", width: 350}
     ];
 
     

@@ -8,6 +8,7 @@ import {Constants} from '../../Constants/constants';
 import { HttpStatus } from 'src/app/helpers/http-status.enum';
 import { catchError } from 'rxjs/operators';
 
+
 @Injectable()
 export class BaseService {
  
@@ -23,6 +24,8 @@ export class BaseService {
 
    }
   
+
+
    public GetAPI<T>(methodName:string):Observable<ServiceResponse<T>>{
         this.setHttpHeadear();
             let  httpOptions ={

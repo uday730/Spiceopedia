@@ -14,10 +14,13 @@ export class AuthCallbackComponent implements OnInit {
 
   ngOnInit(): void {
     //
+    //this.router.navigate(['/dashboard'],    {queryParams: {}});
+    console.log('I am back to UI..')
     this.authService.completeAuthentication()
      .then(user=>{
        let userObj = <User>user!;
          this.router.navigate(['/category'],    {queryParams: {}});
+         //this.router.navigate(['/dashboard'],    {queryParams: {}});
      });
   }
 

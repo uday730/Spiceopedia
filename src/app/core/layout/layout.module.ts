@@ -8,6 +8,7 @@ import {PlainLayoutComponent} from './plain-layout/plain-layout.component';
 import { LayoutRoutingModule } from './layout-routing';
 import { SpiceopediaService } from '../service/spiceopedia.service';
 import { BaseService } from '../service/base.service';
+//import {AppSettingService} from '../service/appSetting.service';
 
 @NgModule({
   declarations: [

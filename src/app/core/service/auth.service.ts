@@ -1,7 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserManager, UserManagerSettings, User, Log } from 'oidc-client';
+import { Observable } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import {environment} from '../../../environments/environment';
+import {AppSetting} from '../Model/appSetting.model';
 
+const SETTINGS_LOCATION="assets/appsettings.json";
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +15,14 @@ export class AuthService {
 
   private manager = new UserManager(getClientSettings());
    user: User;
+   appSeting:any;
   
-  constructor() {
+  constructor(private http: HttpClient) {
+    
     this.manager.getUser().then(user => {
       this.user = user!;
-  });
+      });
    }
-  
   
   isLoggedIn(): boolean {
     return this.user != null && !this.user.expired;
@@ -48,6 +54,7 @@ export class AuthService {
 }
 
 export function getClientSettings( ): UserManagerSettings {
+  //console.log(appSetting);
   return {
       authority: environment.IDENTITY_SERVER,
       client_id: environment.CLIENT_ID,

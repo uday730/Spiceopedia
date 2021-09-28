@@ -64,7 +64,7 @@ public columnDefs:any =[]
         deleteEventCallback:this.onDeleteCallback}
       },
       { field: 'id', headerName: "ID",sortable: true, width: 75,},
-      { field: 'subtype', headerName: "Type",sortable: true , width: 220},
+      { field: 'subtype', headerName: "Type",sortable: true , width: 320},
     ];
 
     this.getAllCropSubType();
@@ -201,6 +201,7 @@ public columnDefs:any =[]
                 });
                 
                 this.rowData = newRowData;
+                new CustomJSExtention().ToasterSuccess("Updated successfully!",ToastOption.Info,Constants.Toast_Info_BgColor);
               }
               else{
                   let newRowData = this.rowData.slice();
@@ -208,11 +209,14 @@ public columnDefs:any =[]
                   newRowData.push(newRow);
 
                   this.rowData = newRowData;
+                  new CustomJSExtention().ToasterSuccess("Saved successfully!",ToastOption.Success,Constants.Toast_Success_BgColor);
               }
-              this.submitted = false;
+
+                this.submitted = false;
                 this.onClear();
+
                 new CustomJSExtention().ModalHide('SavePopup'+this.popupname2);
-                new CustomJSExtention().ToasterSuccess("Saved successfully!",ToastOption.Success,Constants.Toast_Success_BgColor);
+                
             }
             else
             {
