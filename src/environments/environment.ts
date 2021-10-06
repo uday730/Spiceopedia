@@ -15,7 +15,7 @@ export const environment = {
  
 
   // IDENTITY_SERVER: 'https://localhost/tastegenidp/',
-  // CLIENT_ID: 'spicyui',
+  // CLIENT_ID: 'tgadminui',
   // REDIRECT_URI: 'http://localhost/tastegen/auth-callback',
   // POSTLOGOUT_URI: 'http://localhost/tastegen/logout',
   // RESPONSE_TYPE:"code",
@@ -24,30 +24,39 @@ export const environment = {
 
   // IDENTITY_SERVER: 'http://desktop-333h1tu/tastegenIDP/',
   // WEBAPI_URI:"http://desktop-333h1tu/tastegenapi/api/",
-  // CLIENT_ID: 'spicyui',
+  // CLIENT_ID: 'tgadminui',
   // REDIRECT_URI: 'http://desktop-333h1tu/spiceopedia/auth-callback',
   // POSTLOGOUT_URI: 'http://desktop-333h1tu/spiceopedia/logout',
   // RESPONSE_TYPE:"code",
   // SCOPE:"openid profile email role api1.read"
   
 
-  IDENTITY_SERVER: 'https://tgidp.azurewebsites.net/',
-  WEBAPI_URI:"https://tgapi1.azurewebsites.net/api/",
+  // IDENTITY_SERVER: 'https://localhost/tgidp/',
+  // WEBAPI_URI:     "https://localhost/tgapi/api/",
+  // CLIENT_ID:      'tgadminui',
+  // REDIRECT_URI: 'https://localhost:4201/auth-callback',
+  // POSTLOGOUT_URI: 'https://localhost:4201/logout',
+  // RESPONSE_TYPE:"code",
+  // SCOPE:"openid profile email role api1.read",
+  
+
+
+  //   IDENTITY_SERVER: 'http://desktop-333h1tu/tastegenIDP',
+  // WEBAPI_URI:"http://desktop-333h1tu/tastegenapi/api/",
+  // CLIENT_ID: 'tgadminui',
+  // REDIRECT_URI: 'http://localhost:4201/auth-callback',
+  // POSTLOGOUT_URI: 'http://localhost:4201/logout',
+  // RESPONSE_TYPE:"code",
+  // SCOPE:"openid profile email role api1.read"
+
+  IDENTITY_SERVER: 'https://localhost:5003/',
+  WEBAPI_URI:"https://localhost:5001/api/",
   CLIENT_ID: 'tgadminui',
   REDIRECT_URI: 'http://localhost:4201/auth-callback',
   POSTLOGOUT_URI: 'http://localhost:4201/logout',
   RESPONSE_TYPE:"code",
   SCOPE:"openid profile email role api1.read",
   
-
-
-  //   IDENTITY_SERVER: 'http://desktop-333h1tu/tastegenIDP',
-  // WEBAPI_URI:"http://desktop-333h1tu/tastegenapi/api/",
-  // CLIENT_ID: 'spicyui',
-  // REDIRECT_URI: 'http://localhost:4201/auth-callback',
-  // POSTLOGOUT_URI: 'http://localhost:4201/logout',
-  // RESPONSE_TYPE:"code",
-  // SCOPE:"openid profile email role api1.read"
 };
 
 /*

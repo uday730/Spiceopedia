@@ -11,7 +11,7 @@ export class MainLayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadScript('../assets/js/misc.js');
+    this.loadScript('./assets/js/misc.js');
   }
 
   public loadScript(url: string) {
