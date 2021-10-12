@@ -25,8 +25,12 @@ const routes: Routes = [
       { path: 'claims', loadChildren: () => import(`../page/page.module`).then(m => m.PageModule) },
       { path: 'crop', loadChildren: () => import(`../page/page.module`).then(m => m.PageModule) },
       { path: 'cropsubtype', loadChildren: () => import(`../page/page.module`).then(m => m.PageModule) },
+      { path: 'description', loadChildren: () => import(`../page/page.module`).then(m => m.PageModule) },
+      { path: 'lifecycle', loadChildren: () => import(`../page/page.module`).then(m => m.PageModule) },
+      { path: 'attachment', loadChildren: () => import(`../page/page.module`).then(m => m.PageModule) },
+      { path: 'attachmenttype', loadChildren: () => import(`../page/page.module`).then(m => m.PageModule) },
+      { path: 'attachmentdetail', loadChildren: () => import(`../page/page.module`).then(m => m.PageModule) },
       
-      //{ path: 'status1', loadChildren: () => import(`../page/page.module`).then(m => m.PageModule) },
       { path: 'taxonomy', loadChildren: () => import(`../page/taxonomy/taxonomy.module`).then(m => m.TaxonomyModule) },
       { path: 'logout', loadChildren: () => import(`../page/logout/logout.module`).then(m => m.LogoutModule) },
     ],

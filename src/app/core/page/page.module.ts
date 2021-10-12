@@ -12,8 +12,14 @@ import {PageRoutingModule} from './page-routing.module'
 import {ClaimsComponent} from './claims/claims.component';
 import {CropComponent} from './crop/crop.component';
 import {CropSubTypeComponent} from './crop/cropsubtype.component';
+import { DescriptionComponent } from './description/description.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { RouterModule } from '@angular/router';
+import { AttachmentComponent } from './attachment/attachment.component';
+import { AttachmentTypeComponent } from './attachment/attachment-type.component';
+import { AttachmentDetailComponent } from './attachment/attachment-details.component';
 //import {StatusScreenComponent} from './status-screen/status-screen.component';
-
+ 
 @NgModule({
   imports: [
     FormsModule,
@@ -26,7 +32,12 @@ import {CropSubTypeComponent} from './crop/cropsubtype.component';
           CategoryDetailComponent,
           ClaimsComponent,
           CropComponent,
+          DescriptionComponent,
+          LifecycleComponent,
           CropSubTypeComponent,
+          AttachmentComponent,
+          AttachmentDetailComponent,
+          AttachmentTypeComponent,
         //  StatusScreenComponent,
           EditButtonRenderer,
           ModalPopupComponent,

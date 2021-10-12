@@ -1,0 +1,100 @@
+<div class="content-wrapper">
+    <div class="page-header">
+     <!-- <h3 class="page-title">
+         Form validation
+     </h3> -->
+     <nav aria-label="breadcrumb">
+         <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a  [routerLink]="['/attachment']">Attachment</a></li>
+
+         <li class="breadcrumb-item active" aria-current="page">Attachment Details</li>
+         </ol>
+     </nav>
+   </div> 
+   <div class="row grid-margin">
+     <div class="col-8">
+       <div class="card">
+         <div class="card-body">
+           <h4 class="card-title">Add Attachment</h4>
+           <form class="form-horizontal" [formGroup]="form">
+           <div class="form-group row">
+             <div class="col-lg-3">
+               <label class="col-form-label">Name</label>
+             </div>
+             <div class="col-lg-8">
+               <input class="form-control" maxlength="50"  required  type="text" formControlName="attachmentName"
+               [ngClass]="{ 'is-invalid': submitted && f.attachmentName.errors }" >
+             </div>
+           </div>
+           
+           <div class="form-group row">
+             <div class="col-lg-3">
+               <label class="col-form-label">Attachment Type</label>
+             </div>
+             <div class="col-lg-6">
+                <select class="custom-select"  formControlName="attachmentTypeId"  
+                [ngClass]="{ 'is-invalid': submitted && f.attachmentTypeId.errors }">
+
+                  <option value="" disabled>Please select... </option>
+                  <option *ngFor="let item of attachmentTypeList" [ngValue]="item.id">{{item.name}}</option>
+               </select>
+             </div>
+             <div class="col-lg-3">
+              <a  [routerLink]="['/attachmenttype']">Add Attachment Type</a>
+            </div>
+           </div>
+
+           <div class="form-group row">
+            <div class="col-lg-3">
+              <label class="col-form-label">Upload image </label>
+            </div>
+            <div class="col-lg-6">
+              <input type='file' #logoInput (change)="onSelectFile($event)">
+           </div>  
+         </div> 
+
+           <div class="form-group row">
+            <div class="col-lg-3">
+              <label class="col-form-label">Tags</label>
+            </div>
+            <div class="col-lg-8">
+              <input class="form-control" maxlength="50"  required  type="text" formControlName="tags"
+              [ngClass]="{ 'is-invalid': submitted && f.tags.errors }" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-lg-3">
+              <label class="col-form-label">Size</label>
+            </div>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" pattern="\d*" maxlength="3" formControlName="size"
+              [ngClass]="{ 'is-invalid': submitted && f.size.errors }" >
+            </div>
+          </div>
+
+           <div class="form-group row">
+            <div class="col-lg-3">
+              <label class="col-form-label">Status</label>
+            </div>
+            <div class="col-lg-6">
+               <select class="custom-select"  formControlName="statusId"  
+               [ngClass]="{ 'is-invalid': submitted && f.statusId.errors }">
+
+                 <option value="" disabled>Please select... </option>
+                 <option *ngFor="let item of statusList" [ngValue]="item.id">{{item.name}}</option>
+              </select>
+            </div>
+            <div class="col-lg-3">
+              <a  [routerLink]="['/status']">Add Status</a>
+            </div>
+          </div>
+         </form>
+
+         <modal-popup-component [callbackFunction]="myCallbackFunction.bind(this)" [popupContent]="popupBody" [alertType]="alertIcon"></modal-popup-component>
+           <button class="btn btn-primary" (click)="onSubmit()" >Submit</button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

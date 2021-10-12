@@ -82,6 +82,108 @@ return result;
 }  
 //#endregion
 
+
+//#region Description
+public getDescription(): Observable<any> {
+  var result:any = this.GetAPI("description");
+  return result;
+}
+
+public getDescriptionById(id:number): Observable<any> {
+var result:any = this.GetAPI("descriptionbyid/"+id);
+return result;
+}
+
+public saveDescription(data:any):Observable<any>{
+var result = this.PostAPI("savedescription",data);
+return result;
+}
+
+public deleteDescription(id:number):Observable<any>{
+var result:any = this.DeleteAPI("deletedescription",id);
+return result;
+}  
+//#endregion
+
+//#region Lifecycle
+public getLifecycle(): Observable<any> {
+  var result:any = this.GetAPI("lifecycle");
+  return result;
+}
+
+public getLifecycleById(id:number): Observable<any> {
+var result:any = this.GetAPI("lifecyclebyid/"+id);
+return result;
+}
+
+public saveLifecycle(data:any):Observable<any>{
+var result = this.PostAPI("savelifecycle",data);
+return result;
+}
+
+public deleteLifecycle(id:number):Observable<any>{
+var result:any = this.DeleteAPI("deletelifecycle",id);
+return result;
+}  
+//#endregion
+
+//#region AttachmentType
+public getAttachmentType(): Observable<any> {
+  var result:any = this.GetAPI("attachmenttype");
+  return result;
+}
+
+public getAttachmentTypeById(id:number): Observable<any> {
+var result:any = this.GetAPI("attachmenttypebyid/"+id);
+return result;
+}
+
+public saveAttachmentType(data:any):Observable<any>{
+var result = this.PostAPI("saveattachmenttype",data);
+return result;
+}
+
+public deleteAttachmentType(id:number):Observable<any>{
+var result:any = this.DeleteAPI("deleteattachmenttype",id);
+return result;
+}  
+//#endregion
+
+//#region Attachment
+public getAttachment(): Observable<any> {
+  var result:any = this.GetAPI("attachment");
+  return result;
+}
+
+public getAttachmentById(id:number): Observable<any> {
+var result:any = this.GetAPI("attachmentbyid/"+id);
+return result;
+}
+
+public saveAttachment(data:any):Observable<any>{
+var result = this.PostAPI("saveattachment",data);
+return result;
+}
+
+public deleteAttachment(id:number):Observable<any>{
+var result:any = this.DeleteAPI("deleteattachment",id);
+return result;
+}  
+//#endregion
+
+//#region Miscellaneous
+public getStatusList(): Observable<any> {
+  var result:any = this.GetAPI("status");
+  return result;
+}
+
+public downloadImage(id:number,fileName:string):Observable<any>{
+  
+  var result:any = this.DownloadAPI("getfile/"+id,fileName);
+  return result;
+}
+//#endregion
+
 }
 
  

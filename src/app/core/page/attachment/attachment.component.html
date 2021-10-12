@@ -1,0 +1,54 @@
+<div class="content-wrapper">
+    <div class="page-header">
+      <h3 class="page-title">
+          Attachments
+      </h3>
+      <!-- <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Forms</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Validation</li>
+          </ol>
+      </nav> -->
+    </div>
+    <div class="row grid-margin">
+      <div class="col-11">
+        <div class="card">
+          <div class="card-body">
+            <div class="text-align-right">
+            <button type="button" class="btn btn-success btn-icon-text" (click)="navigateToDetailPage()">
+              <i class="far fa-plus-square btn-icon-prepend"></i>
+              Add Attachment
+            </button>
+             </div>
+             <br>
+            <div class="form-group row">
+              <div class="col-lg-12">
+                <ag-grid-angular
+                    #agGrid
+                    id="myGrid"
+                    style="width: 99.9%; height: 550px;"
+                    class="ag-theme-alpine"
+                    [pagination]="true"
+                    [rowClassRules]="rowClassRules"
+                    [rowData]="rowData"
+                    [columnDefs]="columnDefs"
+                    [rowSelection]="rowselection"
+                    [defaultColDef]="defaultColDef"
+                    [paginationPageSize]="paginationPageSize"
+                    [frameworkComponents]="frameworkComponents"
+                    (selectionChanged)="onSelectionChanged($event)"
+                    (gridReady)="onGridReady($event)"
+                    (cellDoubleClicked) = "onCellDoubleClicked($event)"
+                >
+                </ag-grid-angular>
+              </div>
+               
+            </div>
+             
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <a class="nav-link" [routerLink]="['/categorydetail',0]">Add Category</a> -->
+    <modal-popup-component [callbackFunction]="deleteCallbackFunction.bind(this)" [popupContent]="popupBody" [alertType]="alertIcon"></modal-popup-component>
+  </div>

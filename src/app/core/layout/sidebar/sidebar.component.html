@@ -18,19 +18,19 @@
         </div>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/dashboard']">
+        <a class="nav-link" [ngClass]="{active: pageName==='dashboard'}" (click)="activateLink('dashboard')" [routerLink]="['/dashboard']">
           <i class="fa fa-home menu-icon"></i>
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
       <li class="nav-item" >
-        <a class="nav-link" [routerLink]="['/spiceobject']">
+        <a class="nav-link" [ngClass]="{active: pageName==='spiceobject'}" (click)="activateLink('spiceobject')" [routerLink]="['/spiceobject']">
           <i class="fa fa-puzzle-piece menu-icon"></i>
           <span class="menu-title">Spice Object</span>
         </a>
       </li>
       <li class="nav-item" >
-        <a class="nav-link" [routerLink]="['/tastegenerator']">
+        <a class="nav-link"  [ngClass]="{active: pageName==='tastegenerator'}" (click)="activateLink('tastegenerator')"  [routerLink]="['/tastegenerator']">
           <i class="fab fa-trello menu-icon"></i>
           <span class="menu-title">Taste Generator</span>
         </a>
@@ -44,8 +44,8 @@
         </a>
         <div class="collapse" id="Flavour">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/flavorobject']">Flavor Objects</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/flavorvalidators']">Flavor Validators</a></li>
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [ngClass]="{active: pageName==='flavorobject'}" (click)="activateLink('flavorobject')" [routerLink]="['/flavorobject']">Flavor Objects</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='flavorvalidators'}" (click)="activateLink('flavorvalidators')" [routerLink]="['/flavorvalidators']">Flavor Validators</a></li>
           </ul>
         </div>
       </li>
@@ -57,8 +57,8 @@
         </a>
         <div class="collapse" id="Crop">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/crop']">Crop</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/cropsubtype']">Crop Subtype</a></li>
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [ngClass]="{active: pageName==='crop'}" (click)="activateLink('crop')" [routerLink]="['/crop']">Crop</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='cropsubtype'}" (click)="activateLink('cropsubtype')" [routerLink]="['/cropsubtype']">Crop Subtype</a></li>
           </ul>
         </div>
       </li>
@@ -71,8 +71,8 @@
         </a>
         <div class="collapse" id="Harvest">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/harvest']">Harvest</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/harvestsubtype']">Harvest Subtype</a></li>
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [ngClass]="{active: pageName==='harvest'}" (click)="activateLink('harvest')"  [routerLink]="['/harvest']">Harvest</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='harvestsubtype'}" (click)="activateLink('harvestsubtype')"  [routerLink]="['/harvestsubtype']">Harvest Subtype</a></li>
           </ul>
         </div>
       </li>
@@ -85,8 +85,8 @@
         </a>
         <div class="collapse" id="Harvest">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/kitchen']">Kitchen</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/kitchensubtype']">Kitchen Subtype</a></li>
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [ngClass]="{active: pageName==='kitchen'}" (click)="activateLink('kitchen')" [routerLink]="['/kitchen']">Kitchen</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='kitchensubtype'}" (click)="activateLink('kitchensubtype')" [routerLink]="['/kitchensubtype']">Kitchen Subtype</a></li>
           </ul>
         </div>
       </li>
@@ -100,8 +100,8 @@
         <div class="collapse" id="taste">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/taste']">Taste Object</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/tastesubtype']">Taste Subtype</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/tastecacao']">Taste Cacao Nutty</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='tastesubtype'}" (click)="activateLink('tastesubtype')" [routerLink]="['/tastesubtype']">Taste Subtype</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='tastecacao'}" (click)="activateLink('tastecacao')" [routerLink]="['/tastecacao']">Taste Cacao Nutty</a></li>
           </ul>
         </div>
       </li>
@@ -114,8 +114,8 @@
         </a>
         <div class="collapse" id="taxonomy">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/taxonomy']">Taxonomy</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/taxonomyspecies']">Taxonomy Species</a></li>
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [ngClass]="{active: pageName==='taxonomy'}" (click)="activateLink('taxonomy')"  [routerLink]="['/taxonomy']">Taxonomy</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='taxonomyspecies'}" (click)="activateLink('taxonomyspecies')"  [routerLink]="['/taxonomyspecies']">Taxonomy Species</a></li>
           </ul>
         </div>
       </li>
@@ -128,22 +128,22 @@
         </a>
         <div class="collapse" id="other">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/attachments']">Attachments</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/area']">Area</a></li>
+            <li class="nav-item d-none d-lg-block"> <a class="nav-link" [routerLink]="['/attachment']">Attachments</a></li>
+            <li class="nav-item"> <a class="nav-link"  [routerLink]="['/area']">Area</a></li>
             <li class="nav-item"> <a class="nav-link" [routerLink]="['/category']">Category</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/certificates']">Certificates</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/claims']">Claims</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/components']">Components</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/country']">Country of Origin</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/description']">Description</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/lifecycle']">Lifecycle</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/microbiology']">Microbiology</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/providers']">Providers</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/productrange']">Product Range</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/processing']">Processing</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/statusscreen']">Status</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/trends']">Trends</a></li>
-            <li class="nav-item"> <a class="nav-link" [routerLink]="['/vitamins']">Vitamins Minerals</a></li>
+            
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='claims'}" (click)="activateLink('claims')" [routerLink]="['/claims']">Claims</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='components'}" (click)="activateLink('components')" [routerLink]="['/components']">Components</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='country'}" (click)="activateLink('country')" [routerLink]="['/country']">Country of Origin</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='description'}" (click)="activateLink('description')" [routerLink]="['/description']">Description</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='lifecycle'}"  (click)="activateLink('lifecycle')" [routerLink]="['/lifecycle']">Lifecycle</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='microbiology'}" (click)="activateLink('microbiology')"[routerLink]="['/microbiology']">Microbiology</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='providers'}" (click)="activateLink('providers')"[routerLink]="['/providers']">Providers</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='productrange'}" (click)="activateLink('productrange')"[routerLink]="['/productrange']">Product Range</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='processing'}" (click)="activateLink('processing')"[routerLink]="['/processing']">Processing</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='statusscreen'}" (click)="activateLink('statusscreen')"[routerLink]="['/statusscreen']">Status</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='trends'}" (click)="activateLink('trends')"[routerLink]="['/trends']">Trends</a></li>
+            <li class="nav-item"> <a class="nav-link" [ngClass]="{active: pageName==='vitamins'}" (click)="activateLink('vitamins')"[routerLink]="['/vitamins']">Vitamins Minerals</a></li>
 
           </ul>
         </div>

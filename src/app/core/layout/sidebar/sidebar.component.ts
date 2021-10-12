@@ -9,12 +9,17 @@ import { AuthService } from '../../service/auth.service';
 export class SidebarComponent implements OnInit {
   userName:string;
   role:string;
-  
+  pageName:string='dashboard';
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
     this.userName = this.authService.getClaims().given_name;
     this.role = this.authService.getClaims().role;
+    //console.log('sidebar')
+  }
+
+  public activateLink(name:string):void{
+    this.pageName = name;
   }
 
 }

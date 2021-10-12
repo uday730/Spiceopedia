@@ -13,7 +13,7 @@ import {AgGridModule} from 'ag-grid-angular';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([]),
+    RouterModule.forRoot([], {   scrollPositionRestoration: 'enabled'  }),
      // RouterModule.forRoot([], { preloadingStrategy: PreloadAllModules }),
    
      HttpClientModule,

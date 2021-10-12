@@ -1,0 +1,81 @@
+<div class="content-wrapper">
+  <div class="page-header">
+    <h3 class="page-title">
+        Description
+    </h3>
+    
+  </div>
+  <div class="row grid-margin">
+    <div class="col-7">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">List</h4>
+           
+          <div class="form-group row">
+            <div class="col-lg-12">
+              <ag-grid-angular
+              #agGrid
+              id="myGrid"
+              style="width: 99.9%; height: 500px;"
+              class="ag-theme-alpine"
+              [pagination]="true"
+              [rowClassRules]="rowClassRules"
+              [rowData]="rowData"
+              [columnDefs]="columnDefs"
+              [rowSelection]="rowselection"
+              [defaultColDef]="defaultColDef"
+              [paginationPageSize]="paginationPageSize"
+              [frameworkComponents]="frameworkComponents"
+              (selectionChanged)="onSelectionChanged($event)"
+              (gridReady)="onGridReady($event)"
+          >
+
+          </ag-grid-angular>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-5">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Add Description</h4>
+           <br>
+           <form class="form-horizontal" [formGroup]="form">
+            <div class="form-group row">
+              <label for="exampleInputUsername2" class="col-sm-3 col-form-label">ID</label>
+              <div class="col-sm-7">
+                {{form.value.Id}}   
+              </div>
+            </div>
+
+            <div class="form-group ">
+              <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Type</label>
+              <div class="col-sm-12">
+                <input class="form-control" maxlength="50"  required  type="text" formControlName="type"
+                [ngClass]="{ 'is-invalid': submitted && f.type.errors }" >
+              </div>
+            </div>
+
+            <div class="form-group ">
+              <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Information</label>
+              <div class="col-sm-12">
+                <textarea class="form-control"    required  type="text" formControlName="information" rows="12" 
+                [ngClass]="{ 'is-invalid': submitted && f.information.errors }" ></textarea>
+              </div>
+            </div>
+
+           </form>
+           <button class="btn btn-primary mr-2" (click)="onSubmit()" >Save</button>
+           <button class="btn btn-light" (click)="onClear()">Cancel</button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <!-- <a class="nav-link" [routerLink]="['/categorydetail',0]">Add Category</a> -->
+</div>
+<modal-popup-component  [callbackFunction]="deleteCallbackFunction.bind(this)" [PopupName]="popupname" [popupContent]="popupBody" [alertType]="alertIcon"></modal-popup-component>
+<modal-popup-component  [callbackFunction]="onSaveCallback.bind(this)" [PopupName]="popupname2" [popupContent]="popupBody2" [alertType]="alertIcon2"></modal-popup-component>
